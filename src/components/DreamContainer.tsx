@@ -4,14 +4,9 @@ import React, {useState} from 'react';
 
 interface ContainerProps { }
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+const DreamContainer: React.FC<ContainerProps> = () => {
   const [title, setTitle] = useState<string>();
-  const [date, setDate] = useState<number>();
   const [text, setText] = useState<string>()
-  function handleChange(stuff:any) {
-    setDate(stuff)
-    console.log(date);
-  }
   return (
     <>
     <IonContent>
@@ -25,10 +20,6 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
             <IonTextarea value={text} placeholder="Enter text" onIonChange={e => setText(e.detail.value!)}>
             </IonTextarea>
           </IonItem>
-          <IonItemDivider>Select Reminder Date and Time</IonItemDivider>
-          <IonItem>
-            <IonDatetime onIonChange={(e) => handleChange(e.target.value)}></IonDatetime>
-          </IonItem>
           <IonItem>
             <IonButton>Submit</IonButton>
           </IonItem>
@@ -38,4 +29,4 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   );
 };
 
-export default ExploreContainer;
+export default DreamContainer;
